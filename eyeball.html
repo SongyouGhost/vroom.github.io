@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>按住生成小球</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        cursor: none; /* 隱藏滑鼠指標 */
+    }
+    .ball {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 0, 0, 0.171);
+        background-image: url(eye4.png);
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none; /* 讓小球不會觸發滑鼠事件 */
+    }
+</style>
+</head>
+<body>
+
+<script>
+var intervalId; // 用於存儲生成小球的定時器ID
+
+document.addEventListener('mousedown', function(event) {
+    clearInterval(intervalId); // 清除之前的定時器
+    intervalId = setInterval(function() {
+        createBall(event.clientX, event.clientY);
+    }, 10); // 設置生成小球的間隔時間
+});
+
+document.addEventListener('mouseup', function() {
+    clearInterval(intervalId); // 停止生成小球
+});
+
+document.addEventListener('mousemove', function(event) {
+    // 更新生成小球的位置
+    clearInterval(intervalId); // 清除之前的定時器
+    intervalId = setInterval(function() {
+        createBall(event.clientX, event.clientY);
+    }, 19); // 設置生成小球的間隔時間
+});
+
+function createBall(x, y) {
+    var ball = document.createElement('div');
+    ball.className = 'ball';
+    var size = Math.floor(Math.random() * 50) + 10; // 隨機大小
+    ball.style.width = size + 'px';
+    ball.style.height = size + 'px';
+    ball.style.left = x + 'px';
+    ball.style.top = y + 'px';
+    document.body.appendChild(ball);
+
+    // 隨機生成飛行方向
+    var angle = Math.random() * Math.PI * 2;
+    var speed = 2 + Math.random() * 5; // 隨機速度
+
+    // 移動小球
+    var moveInterval = setInterval(function() {
+        x += Math.cos(angle) * speed;
+        y += Math.sin(angle) * speed;
+        ball.style.left = x + 'px';
+        ball.style.top = y + 'px';
+
+        // 如果小球超出視窗，則移除小球和停止移動
+        if (x < 0 || x > window.innerWidth || y < 0 || y > window.innerHeight) {
+            clearInterval(moveInterval);
+            ball.remove();
+        }
+    }, 25);
+}
+</script>
+
+</body>
+</html>
