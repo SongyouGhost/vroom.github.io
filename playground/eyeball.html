@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Sun Apr 07 2024 21:44:51 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Mon Apr 08 2024 00:07:50 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66121bbc4db1c2692e7074fa" data-wf-site="6521348452a1d317f5a09fcd" lang="zh">
 <head>
   <meta charset="utf-8">
@@ -21,107 +21,6 @@
 </head>
 <body class="eyeball_body">
   <div class="w-layout-blockcontainer fullcontainer w-container"><img src="../images/Vroom_An.gif" loading="lazy" alt="" class="logoimg_in">
-    <div class="eyeballscript w-embed w-script">
-      <style>
-    .ball {
-        width: 5em;
-        height: 5em;
-        position: absolute;
-        pointer-events: none; /* 讓小球不會觸發滑鼠事件 */
-        transform: translate(-50%,-50%); /* 置中 */
-    }
-</style>
-      <script>
-var audio1 = new Audio('vroom_begin.mp3');
-var audio2 = new Audio('vroom_in.mp3');
-var audio3 = new Audio('vroom_stop.mp3');
-var audio4 = new Audio('vroom_Keep.mp3');
-var intervalId; // 用於存儲生成小球的定時器ID
-var isMouseDown = false;
-var mouseX, mouseY;
-var speedMultiplier = 1; // 隨機速度的加成倍率
-var mouseDownTime = 0; // 按下鼠標的時間
-var vroom2Volume = 0; // vroom2.mp3 的音量
-var baseInterval = 20; // 基本的間隔時間，以毫秒為單位
-var vroomInflag = true; //設定vroomIn只執行一次的變量
-document.addEventListener('mousedown', function(event) {
-    isMouseDown = true;
-    clearInterval(intervalId); // 清除之前的定時器
-    intervalId = setInterval(createBall, baseInterval); // 設置生成小球的間隔時間
-    mouseDownTime = new Date().getTime(); // 紀錄按下鼠標的時間
-    audio1.play(); // 播放音频 vroom1.mp3
-});
-document.addEventListener('mouseup', function() {
-    isMouseDown = false;
-    clearInterval(intervalId); // 停止生成小球
-    setTimeout(function() {
-        audio4.pause(); // 停止播放 vroom2.mp3
-        audio2.pause(); // 停止播放 vroom2.mp3
-        audio3.play(); // 播放音频 vroom3.mp3
-        vroomInflag = true; // 重置 vroomInflag
-    }, 500);
-});
-document.addEventListener('mousemove', function(event) {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-});
-function createBall() {
-    if (isMouseDown) {
-        var x = mouseX;
-        var y = mouseY;
-        var size = (Math.random() * 10 + 1) + 'em'; // 隨機大小，範圍為 1em 到 5em
-        var ball = document.createElement('div');
-        ball.className = 'ball';
-        ball.style.width = size;
-        ball.style.height = size;
-        ball.style.left = x + 'px';
-        ball.style.top = y + 'px';
-        document.body.appendChild(ball);
-        var img = document.createElement('img');
-        var randomIndex = Math.floor(Math.random() * 6) + 1; // 隨機生成 1 到 6 之間的數字
-        img.src = 'images/' + 'eye' + randomIndex + '.gif'; // 使用隨機生成的數字作為圖片路徑
-        img.style.width = '100%';
-        img.style.height = '100%';
-        ball.appendChild(img);
-        // 隨機生成飛行方向
-        var angle = Math.random() * Math.PI * 2;
-        var speed = 2 + Math.random() * (10 * speedMultiplier); // 隨機速度加上加成
-        // 移動小球
-        var moveInterval = setInterval(function() {
-            x += Math.cos(angle) * speed;
-            y += Math.sin(angle) * speed;
-            ball.style.left = x + 'px';
-            ball.style.top = y + 'px';
-            // 如果小球超出視窗，則移除小球和停止移動
-            if (x < -50 || x > window.innerWidth + 50 || y < -50 || y > window.innerHeight + 50) {
-                clearInterval(moveInterval);
-                ball.remove();
-            }
-        }, 25);
-        // 調整間隔時間，使生成小球的速度隨時間變化
-        var interval = baseInterval + (Math.random() * -10); // 在基本間隔時間上加上隨機增量
-        clearInterval(intervalId); // 先清除之前的定時器
-        intervalId = setInterval(createBall, interval); // 重新設置生成小球的間隔時間
-    }
-    // 更新隨機速度的加成倍率
-    var currentTime = new Date().getTime();
-    var timeDifference = (currentTime - mouseDownTime) / 1000; // 計算按下鼠標後的時間差（秒）
-    speedMultiplier = Math.max(1, Math.sqrt(timeDifference)); // 隨著時間的增加，速度加成倍率越大
-    // 播放 vroomIN.mp3
-      if (audio1.ended && isMouseDown && audio2.paused && audio4.paused && vroomInflag) {
-        audio2.play(); // 播放音频 vroomIn
-        vroomInflag = false; // 设置为 false，防止再次触发
-    }
-    // 播放 vroomKeep
-    if (audio1.ended && audio2.ended && isMouseDown && audio4.paused) {
-            setTimeout(function() {
-                audio4.loop = true; // 循環播放 vroomKeep
-                audio4.play(); // 播放音频 vroomKeep
-            }, -1000);
-    }
-}
-</script>
-    </div>
     <div class="scollbar w-embed">
       <style>
   /* 滚动条 */
