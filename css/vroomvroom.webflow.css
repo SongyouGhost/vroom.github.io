@@ -3,8 +3,8 @@
   --black: #000;
   --the-grey: #474747;
   --the-light-grey: #7e7e7e;
-  --white: white;
   --black-2: black;
+  --white: white;
 }
 
 .w-layout-blockcontainer {
@@ -1081,6 +1081,7 @@ em {
 }
 
 .info_text {
+  pointer-events: none;
   color: #000;
   text-align: left;
   flex-wrap: wrap;
@@ -1146,6 +1147,7 @@ em {
 .info_text_2 {
   grid-column-gap: 10em;
   grid-row-gap: 7.5em;
+  pointer-events: none;
   color: #000;
   text-align: left;
   flex-wrap: wrap;
@@ -1224,6 +1226,7 @@ em {
 }
 
 .youtube {
+  width: 100%;
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -1590,7 +1593,8 @@ em {
   background-color: var(--the-red);
   color: var(--black);
   text-align: center;
-  cursor: none;
+  cursor: crosshair;
+  overscroll-behavior-x: none;
   flex-direction: column;
   flex: 0 1 0;
   justify-content: center;
@@ -1600,14 +1604,21 @@ em {
   font-size: 1em;
   font-weight: 700;
   display: flex;
+  overflow: hidden;
 }
 
 .fullcontainer {
+  object-fit: cover;
   width: 100vw;
   max-width: 100%;
   height: 100vh;
+  max-height: 100vh;
   margin-left: 0;
   margin-right: 0;
+  overflow: hidden;
+}
+
+.eyeballscript {
   overflow: hidden;
 }
 
@@ -1665,28 +1676,88 @@ em {
   overflow: visible;
 }
 
+.eyeball_logo {
+  pointer-events: none;
+  cursor: crosshair;
+  background-image: url('../images/Vroom_An.gif');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: scroll;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.eyeball_button {
+  background-color: var(--black-2);
+  color: var(--the-light-grey);
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 15vw;
+  margin: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: .9em;
+  display: block;
+  position: fixed;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: auto;
+}
+
 @media screen and (max-width: 991px) {
   .bignavbar {
-    display: none;
-    position: fixed;
-    top: auto;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     overflow: hidden;
   }
 
   .nav-menu {
     z-index: 0;
-    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: static;
     top: 0%;
     bottom: 0%;
     left: 0%;
     right: 0%;
   }
 
-  .logoimg {
+  .imglayout {
     width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .conset {
+    flex-flow: column;
+  }
+
+  .introductorytext {
+    z-index: 2;
+    width: 100%;
+    position: static;
+  }
+
+  .logoimg {
+    width: 70%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .menu-button {
@@ -1697,9 +1768,29 @@ em {
     height: 5em;
   }
 
+  .name {
+    position: static;
+  }
+
   .screenattention {
     background-color: rgba(255, 0, 0, .05);
-    display: flex;
+    display: none;
+  }
+
+  .youtube {
+    object-fit: cover;
+  }
+
+  .topandnext {
+    margin-bottom: 10em;
+  }
+
+  .footerlink2 {
+    letter-spacing: 2px;
+  }
+
+  .foot_info_img {
+    font-size: 1.5em;
   }
 }
 
@@ -2138,6 +2229,10 @@ em {
 
   .people_in:hover {
     width: 100dvw;
+  }
+
+  .footer {
+    padding-bottom: 11.5em;
   }
 
   .footer_div {
