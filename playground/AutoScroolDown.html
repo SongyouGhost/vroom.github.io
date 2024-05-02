@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自動滾動頁面</title>
+<style>
+    body, html {
+        align-self: center;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        background-color: #000000;
+        background-image: url('eye4.gif'); /* 滑塊的背景圖片 */
+    }
+    .img {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+</head>
+<body>
+<div class="content"></div>
+<script>
+    // 初始化滚动速度
+    let scrollSpeed = 10; // 初始滚动速度为10px
+
+    // 自动滚动函数
+    function autoScroll() {
+        // 将窗口向下滚动一定距离
+        window.scrollBy(0, scrollSpeed);
+        // 获取窗口的滚动位置
+        var scrollPosition = window.innerHeight + window.pageYOffset;
+        // 获取页面的实际高度
+        var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+        
+        // 如果已经滚动到页面底部
+        if (scrollPosition >= documentHeight) {
+            // 添加新的内容以扩展页面
+            addContent();
+        }
+    }
+
+    // 添加内容以使页面无限延伸
+    function addContent() {
+        // 生成随机图片序号
+        var randomNum = Math.floor(Math.random() * 157) + 1;
+        var imageUrl = 'face' + ('00' + randomNum).slice(-3) + '.jpg';
+        
+        // 创建新的 div 元素并添加到页面末尾
+        const newDiv = document.createElement('div');
+        newDiv.className = 'img';
+        newDiv.style.backgroundImage = 'url(' + imageUrl + ')';
+        document.body.appendChild(newDiv);
+    }
+
+    // 设置定时器，每10毫秒执行一次自动滚动函数
+    let scrollInterval = setInterval(autoScroll, 10);
+</script>
+</body>
+</html>

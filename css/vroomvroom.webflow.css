@@ -1350,13 +1350,13 @@ em {
 }
 
 .peopleground {
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
   object-position: 50% 50%;
   flex-flow: row;
   flex: 0 auto;
   grid-template-rows: auto;
-  grid-template-columns: auto auto auto auto auto 1fr;
+  grid-template-columns: auto auto auto auto auto 1fr 1fr;
   grid-auto-columns: 1fr;
   grid-auto-flow: row dense;
   justify-content: space-between;
@@ -1790,6 +1790,402 @@ em {
   font-size: .9em;
 }
 
+.shopslider {
+  object-fit: cover;
+  background-color: rgba(221, 221, 221, 0);
+  height: 100vh;
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+.mask {
+  object-fit: cover;
+  border-radius: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shopimg {
+  object-fit: cover;
+  width: 100%;
+  max-width: 110%;
+  height: 100%;
+}
+
+.shoplist {
+  z-index: 2;
+  cursor: crosshair;
+  background-color: rgba(225, 26, 20, .9);
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: stretch;
+  min-width: 100px;
+  max-width: 50vw;
+  min-height: 100px;
+  padding: 2% 2% 1% 1%;
+  display: flex;
+  position: fixed;
+  top: 15%;
+  bottom: 15%;
+  left: 5%;
+  right: auto;
+  transform: rotate(-3deg);
+}
+
+.shoptxtlinl {
+  color: #000;
+  cursor: pointer;
+  justify-content: space-between;
+  width: 32vw;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-top: 1em;
+  padding-bottom: .5em;
+  font-size: .8em;
+  transition: transform .1s;
+  display: flex;
+  position: relative;
+}
+
+.shoptxtlinl:hover {
+  -webkit-text-stroke-width: 2px;
+  transform: scale(1.05);
+}
+
+.shopgoods {
+  border: 3px solid var(--the-red);
+  width: 70vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.shopcon {
+  grid-column-gap: 50vh;
+  grid-row-gap: 50vh;
+  cursor: crosshair;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.shoph1 {
+  color: var(--black-2);
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 5em;
+}
+
+.shoph4 {
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 100%;
+  width: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+
+.shoph4:hover {
+  font-weight: 900;
+}
+
+.shoph3 {
+  color: #000;
+  letter-spacing: -1px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.6em;
+  font-weight: 800;
+  position: relative;
+  left: auto;
+  right: 5%;
+}
+
+.shopgoodinfo {
+  text-align: justify;
+  flex: 1;
+  font-weight: 500;
+  position: absolute;
+  top: 0%;
+  bottom: auto;
+  left: auto;
+  right: 0%;
+}
+
+.shopbody {
+  background-image: url('../images/01.jpg');
+  background-position: 50%;
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Inter, sans-serif;
+  overflow: visible;
+}
+
+.shopbuy {
+  border: 2px solid var(--the-grey);
+  color: var(--the-grey);
+  text-align: center;
+  border-radius: 1.5em;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: .2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 2em;
+  font-weight: 500;
+  transition: background-color .2s cubic-bezier(.23, 1, .32, 1);
+  display: inline-flex;
+}
+
+.shopbuy:hover {
+  border-width: 5px;
+  border-color: var(--black);
+  background-color: var(--black);
+  color: var(--the-light-grey);
+}
+
+.shopcard {
+  background-color: var(--the-grey);
+  opacity: .9;
+  cursor: pointer;
+  width: 5em;
+  padding-top: .5em;
+  position: absolute;
+  top: -2%;
+  bottom: 20%;
+  left: auto;
+  right: -10%;
+}
+
+.shopcardtxt {
+  color: var(--the-light-grey);
+  text-transform: uppercase;
+  font-size: 2.4em;
+  font-weight: 400;
+  transform: rotate(90deg);
+}
+
+.div-block-11 {
+  width: 100%;
+  height: 90vh;
+}
+
+.shopspeace {
+  width: 100%;
+  height: 100vh;
+}
+
+.shopgoodsh4 {
+  border: 1px solid var(--the-red);
+  color: var(--the-red);
+  text-align: center;
+  border-radius: 100%;
+  width: 2.3em;
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  font-size: 2em;
+  font-weight: 300;
+  position: absolute;
+  top: 0%;
+  bottom: auto;
+  left: auto;
+  right: 0%;
+}
+
+.shopgoodsh4:hover {
+  font-weight: 900;
+}
+
+.shopgoodsh2 {
+  color: var(--the-red);
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  font-size: 2em;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: auto;
+  right: 0%;
+}
+
+.shopgoodsh3 {
+  color: var(--the-red);
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  font-size: 2em;
+  font-weight: 600;
+  display: block;
+  position: absolute;
+  top: auto;
+  bottom: 0%;
+  left: auto;
+  right: 0%;
+}
+
+.shopgoodinfo-b {
+  color: var(--the-red);
+  margin-left: 10px;
+  font-size: 1.3em;
+  font-weight: 500;
+  line-height: 1.2em;
+  position: absolute;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: 15%;
+}
+
+.shopgoodinfo-b.tc {
+  font-family: Noto Sans TC, sans-serif;
+}
+
+.shopgoodslogo {
+  display: none;
+}
+
+.shopbuyphone {
+  border: 2px solid var(--the-grey);
+  color: var(--the-grey);
+  text-align: center;
+  border-radius: 1.5em;
+  width: 100%;
+  height: 1.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: .2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 2em;
+  font-weight: 500;
+  transition: background-color .2s cubic-bezier(.23, 1, .32, 1);
+  display: block;
+}
+
+.shopbuyphone:hover {
+  border-width: 5px;
+  border-color: var(--black);
+  background-color: var(--black);
+  color: var(--the-light-grey);
+}
+
+.shopgoodinfo2 {
+  font-size: 1.1em;
+  font-weight: 800;
+  position: absolute;
+  top: auto;
+  bottom: 0%;
+  left: auto;
+  right: 15%;
+}
+
+.tc {
+  font-family: Noto Sans TC, sans-serif;
+  font-size: .8em;
+  font-weight: 700;
+}
+
+.shopgoodsh2en {
+  color: var(--the-red);
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  font-size: 2em;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top: 40%;
+  bottom: 40%;
+  left: auto;
+  right: 0%;
+}
+
+.shopgoodsh2cn {
+  color: var(--the-red);
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  font-size: 2em;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top: auto;
+  bottom: 25%;
+  left: auto;
+  right: 0%;
+}
+
+.shopgoods_id {
+  pointer-events: none;
+  width: 5px;
+  height: 100vh;
+  margin: auto;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.shopbuyphonediv {
+  display: none;
+}
+
+.shopgoodsprcn {
+  color: var(--the-red);
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  font-size: 2em;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top: auto;
+  bottom: 25%;
+  left: auto;
+  right: 0%;
+}
+
 @media screen and (max-width: 991px) {
   .bignavbar {
     display: block;
@@ -1866,6 +2262,80 @@ em {
 
   .foot_info_img {
     font-size: 1.5em;
+  }
+
+  .shoplist {
+    min-width: auto;
+    padding-top: 3%;
+  }
+
+  .shoptxtlinl {
+    width: 35vw;
+    padding-top: 7%;
+    padding-bottom: .5em;
+  }
+
+  .shoptxtlinl.w--current {
+    outline-offset: 0px;
+    outline: 1px solid #000;
+    text-decoration: line-through;
+  }
+
+  .shopgoods {
+    width: 85vw;
+    margin-right: 0;
+  }
+
+  .shopcon {
+    grid-column-gap: 20vh;
+    grid-row-gap: 20vh;
+  }
+
+  .shoph1 {
+    font-size: 4em;
+  }
+
+  .shoph3 {
+    font-size: 1.4em;
+  }
+
+  .shopgoodinfo {
+    padding-left: 50px;
+    font-size: 1em;
+    line-height: 1em;
+  }
+
+  .shopbuy {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5em;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.5em;
+    display: flex;
+  }
+
+  .shopcard {
+    width: 4em;
+    line-height: 15px;
+  }
+
+  .shopcardtxt {
+    font-size: 2em;
+  }
+
+  .shopbuyphone {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.5em;
+  }
+
+  .shopgoodinfo2 {
+    padding-left: 50px;
+    font-size: 1em;
+    line-height: 1em;
   }
 }
 
@@ -2215,6 +2685,10 @@ em {
     display: block;
   }
 
+  .scollbar {
+    height: 1px;
+  }
+
   .autoscolltop, .scolldownmusic {
     display: none;
   }
@@ -2378,12 +2852,18 @@ em {
   }
 
   .footerlink2 {
+    color: var(--the-light-grey);
     letter-spacing: 0;
     word-break: break-all;
     overflow-wrap: normal;
-    font-size: 1em;
+    font-size: .7em;
     font-weight: 600;
     line-height: 1.4em;
+  }
+
+  .footerlink2:hover {
+    letter-spacing: 0;
+    -webkit-text-stroke-width: 2px;
   }
 
   .allplayer_navbar {
@@ -2421,6 +2901,163 @@ em {
 
   .dateh4 {
     display: none;
+  }
+
+  .shoplist {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+    padding-top: 10%;
+    padding-bottom: 0%;
+    position: relative;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0;
+    transform: none;
+  }
+
+  .shoptxtlinl {
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .shopgoods {
+    border-left-style: none;
+    border-right-style: none;
+    width: 100vw;
+    height: 70vh;
+  }
+
+  .shopcon {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+
+  .shoph1 {
+    text-align: center;
+  }
+
+  .shopbody {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    overflow: visible;
+  }
+
+  .shopbuy {
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    margin-bottom: 10px;
+    display: inline-flex;
+  }
+
+  .shopcard, .shopspeace {
+    display: none;
+  }
+
+  .shopgoodsh2 {
+    margin-left: 10px;
+    top: 0%;
+    bottom: auto;
+    left: 0%;
+    right: auto;
+  }
+
+  .shopgoodinfo-b {
+    font-size: .8em;
+    line-height: 14px;
+    right: 25%;
+  }
+
+  .shopgoodimg {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .shopgoodslogo {
+    display: block;
+  }
+
+  .shopbuyphone {
+    border-color: var(--black);
+    background-color: var(--the-light-grey);
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin-top: 20px;
+    margin-bottom: 0;
+    display: flex;
+  }
+
+  .shopgoodsh2en {
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
+    top: 0%;
+    bottom: auto;
+    left: 0%;
+    right: auto;
+  }
+
+  .shopgoodsh2cn {
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 1.5em;
+    top: 0%;
+    bottom: 0%;
+    left: auto;
+    right: 0%;
+  }
+
+  .shopbuyphonediv {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: var(--the-red);
+    border-radius: 20px;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 10vh;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    position: relative;
+  }
+
+  .shopgoodsprcn {
+    color: var(--black);
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: Noto Sans TC, sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.5em;
+    display: block;
+    position: static;
+    top: 0%;
+    bottom: auto;
+    left: auto;
+    right: 0%;
   }
 }
 
