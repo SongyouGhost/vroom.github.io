@@ -1368,7 +1368,6 @@ em {
 
 .peopleimg_deep {
   opacity: 0;
-  cursor: pointer;
   object-fit: cover;
   object-position: 50% 50%;
   width: 100%;
@@ -1419,7 +1418,6 @@ em {
   color: var(--the-grey);
   word-break: keep-all;
   overflow-wrap: anywhere;
-  cursor: pointer;
   justify-content: center;
   align-items: center;
   font-size: 1.8em;
@@ -2254,6 +2252,23 @@ em {
 
   .topandnext {
     margin-bottom: 10em;
+  }
+
+  .peopleground {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    flex-flow: row;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+  }
+
+  .people_in {
+    width: 100px;
+    height: 150px;
   }
 
   .footerlink2 {
