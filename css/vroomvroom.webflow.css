@@ -1349,6 +1349,16 @@ em {
   overflow: hidden;
 }
 
+@media screen and (max-width: 768px) {
+  .peoplegrid {
+    max-width: 728px;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    justify-items: center;
+  }
+}
+
 .peopleground {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
